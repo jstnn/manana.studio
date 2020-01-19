@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+* {
+    padding: 0;
+    color: inherit;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font: 1em Helvetica, Sans-Serif;
+    max-width: 30em;
+    margin: auto;
+    padding: 0 2em;
+    background: rgb(245, 185, 35);
+}
+
+h1 {
+    font: 5em 'Archivo Black';
+    letter-spacing: -.07em;
+    line-height: .77;
+    margin: .18em 0;
+}
+
+h3 {
+    font-size: 1.25em;
+    letter-spacing: -.035em;
+}
+
+section,
+ul {
+    border-top: .0625em solid;
+    min-height: 12em;
+}
+
+section:nth-of-type(8) {
+    height: auto;
+    /* To make last empty section invisible */
+}
+
+footer {
+    font-size: .75em;
+    text-align: center;
+}
+
+@media screen and (min-width:50em) {
+    @supports (display: grid) {
+        body {
+            max-width: 45em;
+        }
+        #container {
+            display: grid;
+            grid-column-gap: 2em;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: "title		editors" "section1	section2" "section3	section4" "section5	section6" "section7	section8" "footer		footer";
+        }
+        h1 {
+            font-size: 2em;
+            grid-area: title;
+            text-align: center;
+        }
+        header {
+            grid-area: editors;
+        }
+        header h3:first-child {
+            text-align: right;
+        }
+        footer {
+            grid-area: footer;
+            border-top: .0625em solid;
+        }
+    }
+}
